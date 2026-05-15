@@ -372,205 +372,1056 @@ const SCALE_SCORE_MAPS = {
     /**************************************************************
  * CONFIGURAÇÃO DAS PERGUNTAS (DINÂMICO)
  **************************************************************/
+
 const FORM_QUESTIONS = [
-  
-{
-  name: "1",
-  section: "Disruptivos — Triagem",
-  type: "radio",
-  text: "Existe um padrão persistente de irritabilidade, explosões ou comportamento desafiador?",
-  options: YNP,
-  scale: "YNP",
-  reverse: false,
-  required: false
-},
-{
-  name: "2",
-  section: "Disruptivos — Triagem",
-  type: "radio",
-  text: "Esse padrão causa prejuízo significativo em dois ou mais contextos (família, trabalho, social ou legal)?",
-  options: YNP,
-  scale: "YNP",
-  reverse: false,
-  required: false
-},
+  {
+    name: "1",
+    type: "radio",
+    section: "Disruptivos — Triagem & História",
+    text: "Você costuma ter comportamentos de oposição, desafio, irritabilidade, agressividade, impulsividade ou violação de regras que causam problemas na sua vida?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "2",
+    type: "radio",
+    section: "Disruptivos — Triagem & História",
+    text: "Esses comportamentos aparecem em mais de um contexto, como casa, escola, trabalho, família, relacionamentos ou vida social?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "3",
+    type: "radio",
+    section: "Disruptivos — Triagem & História",
+    text: "Outras pessoas já disseram que você é muito desafiador, explosivo, agressivo, vingativo, provocador, impulsivo ou difícil de lidar?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "4",
+    type: "radio",
+    section: "Disruptivos — Triagem & História",
+    text: "Esses comportamentos causam prejuízo em relacionamentos, família, escola, trabalho, vida social, segurança ou questões legais?",
+    options: SEVER4,
+    scale: "SEVER4",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "5",
+    type: "radio",
+    section: "Disruptivos — Triagem & História",
+    text: "Esses comportamentos são frequentes e persistentes, e não apenas reações isoladas a situações específicas?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
 
-{
-  name: "3",
-  section: "Opositor/Desafiador (TOD)",
-  type: "radio",
-  text: "Discute frequentemente com figuras de autoridade ou superiores?",
-  options: FREQ5,
-  scale: "FREQ5",
-  reverse: false,
-  required: false
-},
-{
-  name: "4",
-  section: "Opositor/Desafiador (TOD)",
-  type: "radio",
-  text: "Recusa ou desafia ativamente regras e solicitações razoáveis?",
-  options: FREQ5,
-  scale: "FREQ5",
-  reverse: false,
-  required: false
-},
-{
-  name: "5",
-  section: "Opositor/Desafiador (TOD)",
-  type: "radio",
-  text: "Provoca ou irrita deliberadamente outras pessoas?",
-  options: FREQ5,
-  scale: "FREQ5",
-  reverse: false,
-  required: false
-},
-{
-  name: "6",
-  section: "Opositor/Desafiador (TOD)",
-  type: "radio",
-  text: "Costuma culpar outras pessoas por seus erros ou comportamentos?",
-  options: FREQ5,
-  scale: "FREQ5",
-  reverse: false,
-  required: false
-},
-{
-  name: "7",
-  section: "Opositor/Desafiador (TOD)",
-  type: "radio",
-  text: "Apresenta irritabilidade frequente ou ressentimento persistente?",
-  options: FREQ5,
-  scale: "FREQ5",
-  reverse: false,
-  required: false
-},
+  {
+    name: "6",
+    type: "radio",
+    section: "TOD — Humor Irritável/Raivoso",
+    text: "Você perde a paciência com facilidade, mesmo diante de situações pequenas ou comuns?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "7",
+    type: "radio",
+    section: "TOD — Humor Irritável/Raivoso",
+    text: "Você fica irritado, bravo ou incomodado facilmente quando alguém te contraria, corrige, cobra ou impõe limites?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "8",
+    type: "radio",
+    section: "TOD — Humor Irritável/Raivoso",
+    text: "Você costuma ficar ressentido, rancoroso ou com raiva por muito tempo depois de se sentir injustiçado ou contrariado?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "9",
+    type: "radio",
+    section: "TOD — Humor Irritável/Raivoso",
+    text: "Você sente que pequenas frustrações viram rapidamente raiva, discussão, provocação ou explosão emocional?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
 
-{
-  name: "8",
-  section: "Explosões & Impulso (TEI)",
-  type: "radio",
-  text: "Apresenta explosões verbais ou físicas desproporcionais ao motivo que as desencadeou?",
-  options: FREQ5,
-  scale: "FREQ5",
-  reverse: false,
-  required: false
-},
-{
-  name: "9",
-  section: "Explosões & Impulso (TEI)",
-  type: "radio",
-  text: "Durante as explosões há perda de controle e dificuldade de interromper o comportamento?",
-  options: FREQ5,
-  scale: "FREQ5",
-  reverse: false,
-  required: false
-},
-{
-  name: "10",
-  section: "Explosões & Impulso (TEI)",
-  type: "radio",
-  text: "Essas explosões já causaram dano material, agressão física ou risco real a outras pessoas?",
-  options: YNP,
-  scale: "YNP",
-  reverse: false,
-  required: false
-},
-{
-  name: "11",
-  section: "Explosões & Impulso (TEI)",
-  type: "radio",
-  text: "Após as explosões a pessoa costuma sentir arrependimento ou culpa?",
-  options: FREQ5,
-  scale: "FREQ5",
-  reverse: false,
-  required: false
-},
+  {
+    name: "10",
+    type: "radio",
+    section: "TOD — Comportamento Questionador/Desafiante",
+    text: "Você discute frequentemente com pais, professores, chefes, familiares, autoridades ou pessoas que tentam colocar regras?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "11",
+    type: "radio",
+    section: "TOD — Comportamento Questionador/Desafiante",
+    text: "Você costuma desafiar ou se recusar a cumprir regras, pedidos, combinados ou orientações de figuras de autoridade?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "12",
+    type: "radio",
+    section: "TOD — Comportamento Questionador/Desafiante",
+    text: "Você provoca pessoas de propósito, irrita os outros intencionalmente ou faz algo sabendo que vai gerar conflito?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "13",
+    type: "radio",
+    section: "TOD — Comportamento Questionador/Desafiante",
+    text: "Você costuma culpar outras pessoas pelos seus erros, problemas, mau comportamento ou consequências das suas atitudes?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "14",
+    type: "radio",
+    section: "TOD — Comportamento Questionador/Desafiante",
+    text: "Quando alguém tenta te orientar, você costuma responder com oposição, ironia, deboche, teimosia, enfrentamento ou recusa?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
 
-{
-  name: "12",
-  section: "Agressão",
-  type: "radio",
-  text: "Ameaças, gritos ou xingamentos dirigidos a outras pessoas?",
-  options: FREQ5,
-  scale: "FREQ5",
-  reverse: false,
-  required: false
-},
-{
-  name: "13",
-  section: "Agressão",
-  type: "radio",
-  text: "Agressões físicas como empurrar, bater ou lançar objetos?",
-  options: FREQ5,
-  scale: "FREQ5",
-  reverse: false,
-  required: false
-},
-{
-  name: "14",
-  section: "Agressão",
-  type: "radio",
-  text: "Dano proposital a objetos ou propriedade durante conflitos?",
-  options: FREQ5,
-  scale: "FREQ5",
-  reverse: false,
-  required: false
-},
+  {
+    name: "15",
+    type: "radio",
+    section: "TOD — Vingatividade",
+    text: "Você costuma querer se vingar quando se sente contrariado, humilhado, injustiçado, corrigido ou rejeitado?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "16",
+    type: "radio",
+    section: "TOD — Vingatividade",
+    text: "Nos últimos meses, você já fez algo para irritar, punir, prejudicar ou dar o troco em alguém?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "17",
+    type: "radio",
+    section: "TOD — Vingatividade",
+    text: "Você tem dificuldade de deixar passar uma ofensa e sente necessidade de revidar, provocar ou devolver na mesma moeda?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
 
-{
-  name: "15",
-  section: "Conduta — Violações de Regras",
-  type: "radio",
-  text: "Mentiras recorrentes para obter vantagens ou evitar consequências?",
-  options: FREQ5,
-  scale: "FREQ5",
-  reverse: false,
-  required: false
-},
-{
-  name: "16",
-  section: "Conduta — Violações de Regras",
-  type: "radio",
-  text: "Furtos ou roubos em casa, lojas ou trabalho?",
-  options: FREQ5,
-  scale: "FREQ5",
-  reverse: false,
-  required: false
-},
-{
-  name: "17",
-  section: "Conduta — Violações de Regras",
-  type: "radio",
-  text: "Quebra deliberada de regras importantes ou normas legais?",
-  options: FREQ5,
-  scale: "FREQ5",
-  reverse: false,
-  required: false
-},
-{
-  name: "18",
-  section: "Conduta — Violações de Regras",
-  type: "radio",
-  text: "Histórico de violações repetidas de regras ou leis antes dos 15 anos?",
-  options: YNP,
-  scale: "YNP",
-  reverse: false,
-  required: false
-},
+  {
+    name: "18",
+    type: "radio",
+    section: "TOD — Curso e Gravidade",
+    text: "Esse padrão de irritabilidade, desafio, provocação ou vingatividade dura há pelo menos 6 meses?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "19",
+    type: "radio",
+    section: "TOD — Curso e Gravidade",
+    text: "Esses comportamentos acontecem com pessoas que não são apenas irmãos ou pessoas muito próximas em brigas comuns?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "20",
+    type: "radio",
+    section: "TOD — Curso e Gravidade",
+    text: "Esses comportamentos aparecem em apenas um ambiente principal, como somente em casa, somente na escola ou somente no trabalho?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "21",
+    type: "radio",
+    section: "TOD — Curso e Gravidade",
+    text: "Esses comportamentos aparecem em dois ou mais ambientes, como casa e escola, casa e trabalho, família e vida social?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "22",
+    type: "radio",
+    section: "TOD — Curso e Gravidade",
+    text: "Esses comportamentos aparecem em três ou mais ambientes, causando prejuízo amplo na rotina?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
 
-{
-  name: "19",
-  section: "Curso & Duração",
-  type: "radio",
-  text: "O padrão de comportamento está presente há pelo menos 12 meses?",
-  options: YNP,
-  scale: "YNP",
-  reverse: false,
-  required: false
-}
+  {
+    name: "23",
+    type: "radio",
+    section: "Explosivo Intermitente — Agressividade Verbal/Física",
+    text: "Você tem explosões de raiva em que grita, xinga, ameaça, ofende, humilha ou perde o controle verbalmente?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "24",
+    type: "radio",
+    section: "Explosivo Intermitente — Agressividade Verbal/Física",
+    text: "Você tem explosões de raiva em que bate portas, quebra objetos, joga coisas, empurra, ameaça fisicamente ou parte para agressão?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "25",
+    type: "radio",
+    section: "Explosivo Intermitente — Agressividade Verbal/Física",
+    text: "Suas explosões de raiva são desproporcionais ao motivo que as provocou?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "26",
+    type: "radio",
+    section: "Explosivo Intermitente — Agressividade Verbal/Física",
+    text: "Durante uma explosão, você sente que a raiva sobe rápido demais e fica difícil parar antes de agir?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "27",
+    type: "radio",
+    section: "Explosivo Intermitente — Agressividade Verbal/Física",
+    text: "Depois das explosões, você costuma sentir culpa, arrependimento, vergonha ou surpresa com a intensidade da sua reação?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+
+  {
+    name: "28",
+    type: "radio",
+    section: "Explosivo Intermitente — Frequência e Prejuízo",
+    text: "Você tem explosões verbais ou agressões sem lesão/destruição grave pelo menos duas vezes por semana em períodos de maior instabilidade?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "29",
+    type: "radio",
+    section: "Explosivo Intermitente — Frequência e Prejuízo",
+    text: "No último ano, você teve explosões agressivas que causaram dano a objetos, animais ou pessoas?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "30",
+    type: "radio",
+    section: "Explosivo Intermitente — Frequência e Prejuízo",
+    text: "Suas explosões de raiva já causaram prejuízo em relacionamentos, família, escola, trabalho, finanças, segurança ou problemas legais?",
+    options: SEVER4,
+    scale: "SEVER4",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "31",
+    type: "radio",
+    section: "Explosivo Intermitente — Frequência e Prejuízo",
+    text: "Suas explosões parecem impulsivas e emocionais, e não planejadas para conseguir dinheiro, poder, vantagem ou vingança calculada?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+
+  {
+    name: "32",
+    type: "radio",
+    section: "Conduta — Agressão a Pessoas e Animais",
+    text: "Você costuma intimidar, ameaçar, humilhar, perseguir ou dominar outras pessoas pela força, medo ou pressão?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "33",
+    type: "radio",
+    section: "Conduta — Agressão a Pessoas e Animais",
+    text: "Você já iniciou brigas físicas ou agressões corporais repetidamente?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "34",
+    type: "radio",
+    section: "Conduta — Agressão a Pessoas e Animais",
+    text: "Você já usou objeto, arma ou instrumento que poderia ferir gravemente alguém, como faca, pedra, pedaço de madeira, ferramenta, arma ou objeto perigoso?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "35",
+    type: "radio",
+    section: "Conduta — Agressão a Pessoas e Animais",
+    text: "Você já foi cruel fisicamente com pessoas, machucando, humilhando ou causando sofrimento de propósito?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "36",
+    type: "radio",
+    section: "Conduta — Agressão a Pessoas e Animais",
+    text: "Você já foi cruel fisicamente com animais, machucando, maltratando ou causando sofrimento de propósito?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "37",
+    type: "radio",
+    section: "Conduta — Agressão a Pessoas e Animais",
+    text: "Você já roubou confrontando diretamente a vítima, como assalto, ameaça, extorsão, intimidação ou arrancar algo da pessoa?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "38",
+    type: "radio",
+    section: "Conduta — Agressão a Pessoas e Animais",
+    text: "Você já forçou alguém a contato sexual, exposição sexual ou situação íntima contra a vontade da pessoa?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+
+  {
+    name: "39",
+    type: "radio",
+    section: "Conduta — Destruição de Propriedade",
+    text: "Você já colocou fogo de propósito com intenção de causar dano, destruição, prejuízo ou perigo?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "40",
+    type: "radio",
+    section: "Conduta — Destruição de Propriedade",
+    text: "Você já destruiu de propósito objetos, pertences, veículos, paredes, portas, móveis, equipamentos ou propriedade de outras pessoas?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "41",
+    type: "radio",
+    section: "Conduta — Destruição de Propriedade",
+    text: "Você já danificou patrimônio, escola, local de trabalho, casa, comércio ou espaço público por raiva, provocação, diversão ou desafio?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+
+  {
+    name: "42",
+    type: "radio",
+    section: "Conduta — Fraude ou Roubo",
+    text: "Você já invadiu casa, prédio, carro, sala, armário, sistema, conta, celular ou propriedade de outra pessoa sem autorização?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "43",
+    type: "radio",
+    section: "Conduta — Fraude ou Roubo",
+    text: "Você mente com frequência para obter vantagem, evitar responsabilidades, enganar pessoas ou conseguir o que quer?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "44",
+    type: "radio",
+    section: "Conduta — Fraude ou Roubo",
+    text: "Você já enganou, manipulou, aplicou golpe, falsificou, omitiu informações ou usou outra pessoa para obter benefício próprio?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "45",
+    type: "radio",
+    section: "Conduta — Fraude ou Roubo",
+    text: "Você já furtou objetos, dinheiro, cartões, mercadorias, itens de familiares, escola, trabalho ou lojas sem confronto direto com a vítima?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+
+  {
+    name: "46",
+    type: "radio",
+    section: "Conduta — Violações Graves de Regras",
+    text: "Antes dos 13 anos, você costumava sair ou ficar fora de casa à noite apesar da proibição dos responsáveis?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "47",
+    type: "radio",
+    section: "Conduta — Violações Graves de Regras",
+    text: "Você já fugiu de casa durante a noite pelo menos duas vezes, ou uma vez por longo período, sem autorização?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "48",
+    type: "radio",
+    section: "Conduta — Violações Graves de Regras",
+    text: "Antes dos 13 anos, você faltava à escola com frequência sem autorização, fugia da aula ou enganava responsáveis sobre presença escolar?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "49",
+    type: "radio",
+    section: "Conduta — Violações Graves de Regras",
+    text: "Você costuma violar regras importantes mesmo sabendo que isso pode gerar punição, prejuízo, risco ou consequências graves?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+
+  {
+    name: "50",
+    type: "radio",
+    section: "Conduta — Curso e Início",
+    text: "Nos últimos 12 meses, você apresentou comportamentos repetidos de agressão, destruição, roubo, fraude, mentira grave, fuga ou violação importante de regras?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "51",
+    type: "radio",
+    section: "Conduta — Curso e Início",
+    text: "Nos últimos 6 meses, pelo menos um desses comportamentos graves aconteceu novamente?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "52",
+    type: "radio",
+    section: "Conduta — Curso e Início",
+    text: "Esses comportamentos começaram antes dos 10 anos de idade?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "53",
+    type: "radio",
+    section: "Conduta — Curso e Início",
+    text: "Esses comportamentos começaram após os 10 anos de idade?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "54",
+    type: "radio",
+    section: "Conduta — Curso e Início",
+    text: "Esses comportamentos causaram prejuízo importante na escola, família, trabalho, comunidade, relacionamentos ou questões legais?",
+    options: SEVER4,
+    scale: "SEVER4",
+    reverse: false,
+    required: false
+  },
+
+  {
+    name: "55",
+    type: "radio",
+    section: "Conduta — Emoções Pró-Sociais Limitadas",
+    text: "Você sente pouca culpa ou remorso depois de machucar, prejudicar, enganar, humilhar ou causar sofrimento a alguém?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "56",
+    type: "radio",
+    section: "Conduta — Emoções Pró-Sociais Limitadas",
+    text: "Você costuma parecer frio, indiferente ou pouco preocupado com os sentimentos, dor ou sofrimento das outras pessoas?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "57",
+    type: "radio",
+    section: "Conduta — Emoções Pró-Sociais Limitadas",
+    text: "Você se importa pouco com desempenho escolar, profissional, responsabilidades ou consequências, mesmo quando isso prejudica seu futuro?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "58",
+    type: "radio",
+    section: "Conduta — Emoções Pró-Sociais Limitadas",
+    text: "Você costuma demonstrar emoções de forma superficial, calculada ou apenas quando quer conseguir algo?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+
+  {
+    name: "59",
+    type: "radio",
+    section: "Antissocial — Traços em Adultos",
+    text: "Após os 18 anos, você continua apresentando padrão de desrespeito por regras, direitos, segurança ou limites de outras pessoas?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "60",
+    type: "radio",
+    section: "Antissocial — Traços em Adultos",
+    text: "Você tem histórico persistente de mentiras, manipulação, golpes, agressividade, irresponsabilidade, impulsividade ou ausência de remorso?",
+    options: SEVER4,
+    scale: "SEVER4",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "61",
+    type: "radio",
+    section: "Antissocial — Traços em Adultos",
+    text: "Antes dos 15 anos, você já apresentava comportamentos graves de conduta, como agressões, furtos, crueldade, destruição, mentiras importantes, fugas ou violações de regras?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "62",
+    type: "radio",
+    section: "Antissocial — Traços em Adultos",
+    text: "Você já teve problemas legais, escolares, familiares ou profissionais por violar regras, ameaçar, agredir, enganar ou explorar outras pessoas?",
+    options: SEVER4,
+    scale: "SEVER4",
+    reverse: false,
+    required: false
+  },
+
+  {
+    name: "63",
+    type: "radio",
+    section: "Piromania — Fogo e Incêndios",
+    text: "Você já colocou fogo de propósito mais de uma vez sem que fosse por necessidade prática, acidente ou ordem de outra pessoa?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "64",
+    type: "radio",
+    section: "Piromania — Fogo e Incêndios",
+    text: "Antes de colocar fogo, você sente tensão, excitação, impulso forte ou necessidade crescente de fazer isso?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "65",
+    type: "radio",
+    section: "Piromania — Fogo e Incêndios",
+    text: "Você sente fascínio, curiosidade, atração ou prazer com fogo, incêndios, objetos de queima, bombeiros, fumaça ou cenas de incêndio?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "66",
+    type: "radio",
+    section: "Piromania — Fogo e Incêndios",
+    text: "Depois de colocar fogo ou observar o fogo, você sente prazer, alívio, satisfação ou redução da tensão?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "67",
+    type: "radio",
+    section: "Piromania — Fogo e Incêndios",
+    text: "Você colocou fogo por vingança, raiva, dinheiro, ideologia, tentativa de esconder crime, delírio, alucinação ou prejuízo de julgamento?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+
+  {
+    name: "68",
+    type: "radio",
+    section: "Cleptomania — Furto Impulsivo",
+    text: "Você sente impulso repetido de furtar objetos que não precisa para uso pessoal e que não têm grande valor ou necessidade para você?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "69",
+    type: "radio",
+    section: "Cleptomania — Furto Impulsivo",
+    text: "Antes de furtar, você sente tensão, ansiedade, excitação ou impulso difícil de resistir?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "70",
+    type: "radio",
+    section: "Cleptomania — Furto Impulsivo",
+    text: "Durante ou logo após furtar, você sente prazer, alívio, gratificação ou redução da tensão?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "71",
+    type: "radio",
+    section: "Cleptomania — Furto Impulsivo",
+    text: "Você furta sem planejamento elaborado e sem objetivo principal de vingança, raiva, necessidade financeira ou ganho material importante?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "72",
+    type: "radio",
+    section: "Cleptomania — Furto Impulsivo",
+    text: "Depois de furtar, você sente culpa, vergonha, medo de ser descoberto ou arrependimento, mas ainda assim o impulso volta em outros momentos?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+
+  {
+    name: "73",
+    type: "radio",
+    section: "Disruptivos — Raiva e Regulação Emocional",
+    text: "Você tem dificuldade de se acalmar depois que fica com raiva, frustrado, contrariado ou se sente injustiçado?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "74",
+    type: "radio",
+    section: "Disruptivos — Raiva e Regulação Emocional",
+    text: "Você costuma reagir com intensidade maior do que gostaria, mesmo quando sabe que a situação não precisava chegar naquele ponto?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "75",
+    type: "radio",
+    section: "Disruptivos — Raiva e Regulação Emocional",
+    text: "Quando está com raiva, você sente vontade de quebrar coisas, bater, ameaçar, gritar, xingar, fugir ou se vingar?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "76",
+    type: "radio",
+    section: "Disruptivos — Raiva e Regulação Emocional",
+    text: "Suas reações de raiva assustam outras pessoas ou fazem com que elas evitem te contrariar?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+
+  {
+    name: "77",
+    type: "radio",
+    section: "Disruptivos — Prejuízo Funcional",
+    text: "Esses comportamentos geram conflitos frequentes com pais, responsáveis, parceiros, professores, chefes, colegas ou figuras de autoridade?",
+    options: SEVER4,
+    scale: "SEVER4",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "78",
+    type: "radio",
+    section: "Disruptivos — Prejuízo Funcional",
+    text: "Esses comportamentos já causaram suspensão, advertência, expulsão, demissão, término de relacionamento, afastamento familiar ou perda de oportunidades?",
+    options: SEVER4,
+    scale: "SEVER4",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "79",
+    type: "radio",
+    section: "Disruptivos — Prejuízo Funcional",
+    text: "Esses comportamentos já envolveram polícia, conselho tutelar, processos, medidas disciplinares, boletim de ocorrência ou ameaça de consequência legal?",
+    options: SEVER4,
+    scale: "SEVER4",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "80",
+    type: "radio",
+    section: "Disruptivos — Prejuízo Funcional",
+    text: "Esses comportamentos prejudicam sua reputação, confiança dos outros, convivência familiar, desempenho escolar/profissional ou segurança?",
+    options: SEVER4,
+    scale: "SEVER4",
+    reverse: false,
+    required: false
+  },
+
+  {
+    name: "81",
+    type: "radio",
+    section: "Disruptivos — Diferencial com TDAH",
+    text: "Seus problemas de regra, impulsividade ou conflito parecem acontecer principalmente porque você age sem pensar, se distrai, esquece combinados ou não consegue esperar?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "82",
+    type: "radio",
+    section: "Disruptivos — Diferencial com TDAH",
+    text: "Desde a infância, você apresenta desatenção, hiperatividade, impulsividade, desorganização ou dificuldade de autocontrole mesmo quando não está com raiva?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+
+  {
+    name: "83",
+    type: "radio",
+    section: "Disruptivos — Diferencial com TEA",
+    text: "Suas explosões ou recusas acontecem principalmente por mudança de rotina, sobrecarga sensorial, dificuldade de comunicação, rigidez ou frustração por imprevistos?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "84",
+    type: "radio",
+    section: "Disruptivos — Diferencial com TEA",
+    text: "Desde a infância, você apresenta dificuldade de comunicação social, interpretação de sinais sociais, flexibilidade, interesses restritos ou sensibilidade sensorial?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+
+  {
+    name: "85",
+    type: "radio",
+    section: "Disruptivos — Diferencial com Humor",
+    text: "Os comportamentos agressivos, desafiadores ou impulsivos aparecem somente durante fases de depressão, irritabilidade intensa, mania ou hipomania?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "86",
+    type: "radio",
+    section: "Disruptivos — Diferencial com Humor",
+    text: "Quando seu humor melhora, os comportamentos de oposição, agressividade, violação de regras ou explosões diminuem bastante?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+
+  {
+    name: "87",
+    type: "radio",
+    section: "Disruptivos — Diferencial com Trauma",
+    text: "Esses comportamentos começaram ou pioraram depois de trauma, violência, abuso, negligência, perdas, separação, abandono ou ambiente familiar muito instável?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "88",
+    type: "radio",
+    section: "Disruptivos — Diferencial com Trauma",
+    text: "Suas explosões, agressividade ou oposição acontecem principalmente quando você se sente ameaçado, rejeitado, humilhado, acuado ou em perigo?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+
+  {
+    name: "89",
+    type: "radio",
+    section: "Disruptivos — Diferencial com Ansiedade",
+    text: "Sua recusa, irritação ou oposição acontece principalmente para evitar situações que geram medo, vergonha, insegurança, ansiedade ou sensação de incapacidade?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "90",
+    type: "radio",
+    section: "Disruptivos — Diferencial com Aprendizagem",
+    text: "Os comportamentos de oposição ou recusa aparecem principalmente em tarefas escolares, leitura, escrita, matemática ou atividades em que você sente dificuldade ou vergonha de errar?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+
+  {
+    name: "91",
+    type: "radio",
+    section: "Disruptivos — Substâncias e Medicamentos",
+    text: "Esses comportamentos agressivos, impulsivos ou desafiadores aparecem principalmente durante uso de álcool, drogas, estimulantes, anabolizantes, medicações ou abstinência?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "92",
+    type: "radio",
+    section: "Disruptivos — Substâncias e Medicamentos",
+    text: "Esses comportamentos começaram após início, aumento, retirada ou troca de medicação, como estimulantes, antidepressivos, corticoides, anticonvulsivantes ou outras medicações?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+
+  {
+    name: "93",
+    type: "radio",
+    section: "Disruptivos — Condições Médicas e Neurológicas",
+    text: "Esses comportamentos começaram após traumatismo craniano, convulsões, AVC, infecção, alteração hormonal, doença neurológica ou condição médica importante?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "94",
+    type: "radio",
+    section: "Disruptivos — Condições Médicas e Neurológicas",
+    text: "Durante episódios de agressividade ou descontrole, você apresenta confusão mental, apagão, desorientação, perda de consciência ou não lembra bem do que aconteceu?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+
+  {
+    name: "95",
+    type: "radio",
+    section: "Disruptivos — Ambiente e Contexto",
+    text: "Esses comportamentos são muito influenciados por ambiente familiar com brigas, violência, negligência, regras inconsistentes, abuso, punição severa ou falta de limites claros?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "96",
+    type: "radio",
+    section: "Disruptivos — Ambiente e Contexto",
+    text: "Você convive ou conviveu com pessoas que reforçavam agressividade, violação de regras, desafio à autoridade, furtos, mentiras ou comportamentos ilegais?",
+    options: FREQ5,
+    scale: "FREQ5",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "97",
+    type: "radio",
+    section: "Disruptivos — Ambiente e Contexto",
+    text: "Quando há regras claras, rotina previsível, supervisão adequada e consequências consistentes, seus comportamentos melhoram?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+
+  {
+    name: "98",
+    type: "radio",
+    section: "Disruptivos — Risco e Segurança",
+    text: "Atualmente, existe risco de você agredir alguém, quebrar objetos, ameaçar, fugir, furtar, colocar fogo, usar arma ou se envolver em situação perigosa?",
+    options: SEVER4,
+    scale: "SEVER4",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "99",
+    type: "radio",
+    section: "Disruptivos — Risco e Segurança",
+    text: "Você já ameaçou seriamente machucar alguém, se vingar, destruir algo importante ou fazer alguém pagar pelo que fez?",
+    options: SEVER4,
+    scale: "SEVER4",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "100",
+    type: "radio",
+    section: "Disruptivos — Risco e Segurança",
+    text: "Você tem acesso a armas, objetos perigosos, fogo, substâncias ou meios que aumentam o risco durante episódios de raiva ou impulsividade?",
+    options: YNP,
+    scale: "YNP",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "101",
+    type: "radio",
+    section: "Disruptivos — Risco e Segurança",
+    text: "Durante crises de raiva, você também tem pensamentos de se machucar, sumir, morrer ou fazer algo contra si mesmo?",
+    options: SEVER4,
+    scale: "SEVER4",
+    reverse: false,
+    required: false
+  },
+  {
+    name: "102",
+    type: "radio",
+    section: "Disruptivos — Risco e Segurança",
+    text: "Você precisa de intervenção imediata de outra pessoa para se acalmar ou impedir que faça algo perigoso durante crises?",
+    options: SEVER4,
+    scale: "SEVER4",
+    reverse: false,
+    required: false
+  }
 ];
-
+    
 const INDICATORS_CONFIG = {};
 
     /**************************************************************
